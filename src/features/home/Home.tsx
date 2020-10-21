@@ -1,8 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+import {
+  selectGreeting
+} from './homeSlice';
+
 export const Home = () => {
-  const greeting = useSelector(state => state.home.greeting);
+  const greeting = useSelector(selectGreeting);
 
   return (
     <div>
