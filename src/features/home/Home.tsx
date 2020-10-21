@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import {
-  selectGreeting
+  selectGreeting,
 } from './homeSlice';
 
 export const Home = () => {

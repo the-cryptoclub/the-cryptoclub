@@ -8,6 +8,7 @@ import {
 
 import { Home } from './features/home/Home';
 import { About } from './features/about/About';
+import { Chapter1 } from './features/chapter1/Chapter1';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/chapter1">
+            <Chapter1 />
           </Route>
           <Redirect to="/" />
         </Switch>
