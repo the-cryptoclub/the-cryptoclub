@@ -4,10 +4,12 @@ import { RootState } from '../../app/store';
 
 interface HomeState {
   greeting: string;
+  // cipher: ({ key: string, value: string[] })[];
 }
 
 const initialState: HomeState = {
   greeting: 'Hello World!',
+  // cipher: 
 };
 
 const homeSlice = createSlice({

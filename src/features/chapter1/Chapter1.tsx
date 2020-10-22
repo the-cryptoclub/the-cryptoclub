@@ -6,12 +6,15 @@ import {
   decrementCipher,
   selectAlpha,
   selectCipher,
+  selectCipherMove,
 } from './chpater1Slice';
 
 export const Chapter1 = () => {
   const dispatch = useDispatch();
+
   const alpha = useSelector(selectAlpha);
   const cipher = useSelector(selectCipher);
+  const move = useSelector(selectCipherMove);
 
   return (
     <div>
@@ -22,6 +25,7 @@ export const Chapter1 = () => {
         <span>{cipher}</span>
         <button onClick={() => dispatch(incrementCipher())}>+</button>
       </div>
+      Move : <span>{move}</span>
     </div>
   );
 };

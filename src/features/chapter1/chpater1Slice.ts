@@ -34,11 +34,20 @@ export const chapter1Slice = createSlice({
   name: 'chapter1',
   initialState,
   reducers: {
+    incrementCipherByAmount: (state, action) => {
+      state.cipher = action.payload;
+    },
     incrementCipher: (state) => {
       state.cipher += 1;
+      // if (state.cipher === state.origin_letters.length) {
+      //   state.cipher = 0;
+      // }
     },
     decrementCipher: (state) => {
       state.cipher -= 1;
+      // if (state.cipher < 0) {
+      //   state.cipher = state.origin_letters.length - 1;
+      // }
     },
   },
 });
@@ -50,5 +59,12 @@ export const {
 
 export const selectAlpha = (state: RootState) => state.chapter1.alpha_letters;
 export const selectCipher = (state: RootState) => state.chapter1.cipher;
+export const selectCipherMove = (state: RootState) => {
+  let result = (state.chapter1.cipher % state.chapter1.origin_letters.length);
+  if (result < 0) {
+    result += state.chapter1.origin_letters.length;
+  }
+  return result;
+}
 
 export default chapter1Slice.reducer;
